@@ -1,1 +1,15 @@
 Hello GitHub !
+# Hello World program in Python
+import re
+str = '''What is your patient id ? It's 2010022, What problem do you have? I have cold and cough, at morning my temprature was a bit high. Ohh, let me check it, OMG your body temprature is 125. Your pulse rate is 120. Your Blood pressure is 145, quite high.
+'''
+arr = str.lower().split("temprature")
+for s in arr:
+    print(s)
+temp=[]
+for index in range(1, len(arr)):
+    temp = re.findall('[-+]?[.]?[\d]+(?:,\d\d\d)*[\.]?\d*(?:[eE][-+]?\d+)?',arr[index])
+    if(len(temp) != 0):
+        break;
+
+print(float(temp[0]))
